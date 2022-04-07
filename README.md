@@ -215,6 +215,8 @@ Both of these measures are important for evaluating our predictive model, howeve
 
 Now that we know about precision and recall let us look at an **F1 score** which takes both false positives and false negatives into account. The F1 score can be found using both recall and precision:
 
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;F1 = 2\times \frac{recall \times precision}{recall + precision}) 
+
 <img src="https://render.githubusercontent.com/render/math?math=F1 = 2\times \frac{recall \times precision}{recall + precision}">
 
 ### Precision-recall vs ROC curve
