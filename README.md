@@ -143,7 +143,13 @@ Depending on how many classes a dataset contains, in the case of fraudulent or n
 Logistic regression, a supervised learning algorithm can also be applied to our dataset.
 Binary logistic regression assumes binary variables and the desired outcome as factor level 1. Logistic regression can also be applied to more than two binary outcomes, when none of the types have any quantitative significance, this is known as multinomial logistic regression. The binary model is based on the logistic function also known as the sigmoid function often used in statistics.
 
-<img src="https://render.githubusercontent.com/render/math?math=g(z) = \\frac{1}{1+e^z}$ where $z = \\theta^Tx">
+<img src="https://render.githubusercontent.com/render/math?math=g(z) = \frac{1}{1+e^z}">
+where <img src="https://render.githubusercontent.com/render/math?math=z = \theta^Tx">
+
+```math
+J(\theta) = \frac{1}{m}(-y^Tlog(h)-(1-y)^Tlog(1-h))
+```
+and line math $`a^2 + b^2 = c^2`$.
 
 Theta represents our loss function, which helps measure how well the algorithm performs using the weights on functions. Lets define our loss function:
 
