@@ -143,12 +143,11 @@ Depending on how many classes a dataset contains, in the case of fraudulent or n
 Logistic regression, a supervised learning algorithm can also be applied to our dataset.
 Binary logistic regression assumes binary variables and the desired outcome as factor level 1. Logistic regression can also be applied to more than two binary outcomes, when none of the types have any quantitative significance, this is known as multinomial logistic regression. The binary model is based on the logistic function also known as the sigmoid function often used in statistics.
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-$g(z) = \\frac{1}{1+e^z}$ where $z = \\theta^Tx$
+<img src="https://render.githubusercontent.com/render/math?math=g(z) = \\frac{1}{1+e^z}$ where $z = \\theta^Tx">
 
 Theta represents our loss function, which helps measure how well the algorithm performs using the weights on functions. Lets define our loss function:
 
-$J(\\theta) = \\frac{1}{m}(-y^Tlog(h)-(1-y)^Tlog(1-h))$
+<img src="https://render.githubusercontent.com/render/math?math=J(\\theta) = \\frac{1}{m}(-y^Tlog(h)-(1-y)^Tlog(1-h))">
 
 The primary goal is to minimize the loss function, this can be done with the increasing and decreasing of different weights.
 
@@ -168,15 +167,17 @@ The activation function determines the threshold at which a neuron should be act
 
 The loss function helps the neural network determine how to update the weights given the difference between the expected output and the predicted output. Given that we are using the network for classification then we will use a cross-entropy based loss function more specifically **binary cross-entropy** because we only have two classes, whereas if we had more we would refer to categorical cross-entropy. The loss is calculated according to the following formula, where y represents the expected outcome, and y hat represents the outcome produced by our model
 
-$L = -(y_i \\times log(\\hat{y}\_i) + (1-y_i)\\times(log(1-\\hat{y}\_i)))$
+
+<img src="https://render.githubusercontent.com/render/math?math=L = -(y_i \\times log(\\hat{y}\_i) + (1-y_i)\\times(log(1-\\hat{y}\_i)))">
 
 For example, the neural network is fed a fraudulent (labeled 1) case and a non-fraudulent case (labeled 0). The network is 80% confident that the first case is fraudulent meaning $y = 1$ and $\\hat{y} = 0.8$. After plugging these values into our equation we get $L = 0.32$. Now the neural network adjusts the weights accordingly by calculating the average over the loss overall to attain the cost:
 
-$C = -\\frac{1}{N} \\sum\_{i=1}^{N} (y_i \\times log(\\hat{y}\_i) + (1-y_i)\\times(log(1-\\hat{y}\_i)))$
+<img src="https://render.githubusercontent.com/render/math?math=C = -\\frac{1}{N} \\sum\_{i=1}^{N} (y_i \\times log(\\hat{y}\_i) + (1-y_i)\\times(log(1-\\hat{y}\_i)))">
 
 Can also be written as:
 
-$C = -\\frac{1}{N} \\sum\_{i=1}^{N} L$
+<img src="https://render.githubusercontent.com/render/math?math=C = -\\frac{1}{N} \\sum\_{i=1}^{N} L">
+
 
 # Evaluation of results
 
@@ -198,23 +199,23 @@ We can use a confusion matrix to display the predicted labels according to the t
 
 The **accuracy** represents the number of correctly predicted transactions (both TP and TN) over the total number of transactions:
 
-$Accuracy = \\frac{TP+TN}{TP+FP+FN+TN}$
+<img src="https://render.githubusercontent.com/render/math?math=Accuracy = \\frac{TP+TN}{TP+FP+FN+TN}">
 
 Accuracy is not a good measure if the dataset is not balanced and in our case, we are mainly focusing on true negatives, that is correctly predicting fraudulent transactions. A poor model can still result in a high accuracy rate which is why we will focus more on an F1 score which is the weighted average of precision and recall.
 
 First, let's look at recall and precision. **Recall**, the true positive rate, is the percentage of correctly predicted frauds (TP) over the sum of TPs and FNs:
 
-$Recall = \\frac{TP}{TP+FN}$
+<img src="https://render.githubusercontent.com/render/math?math=Recall = \\frac{TP}{TP+FN}">
 
 **Precision**, the positive predictive value is similar to recall however, the percentage is calculated over the total of TPs and FPs:
 
-$Precision = \\frac{TP}{TP+FP}$
+<img src="https://render.githubusercontent.com/render/math?math=Precision = \\frac{TP}{TP+FP}">
 
 Both of these measures are important for evaluating our predictive model, however, given that we are dealing with bank transactions then I believe it is more important to focus on misclassified normal (predicted as non-fraud when actually fraud) transactions rather than misclassified fraudulent (predicted as fraud when actually non-fraud) transactions. This is because wrongly predicting a normal transaction as a fraudulent one has a less significant impact than predicting a fraudulent transaction as a normal one. For this reason, we will pay more attention to achieving a high recall score.
 
 Now that we know about precision and recall let us look at an **F1 score** which takes both false positives and false negatives into account. The F1 score can be found using both recall and precision:
 
-$F1 = 2\\times \\frac{recall \\times precision}{recall + precision}$
+<img src="https://render.githubusercontent.com/render/math?math=F1 = 2\\times \\frac{recall \\times precision}{recall + precision}">
 
 ### Precision-recall vs ROC curve
 
@@ -222,11 +223,11 @@ Given that our model gives the probability of being either fraud or non-fraudule
 
 We are dealing with a binary classification problem which means have two different types of errors: false positives and false negatives. The change of these errors given different classification thresholds can be displayed using a ROC curve. 
 
-$True Positive Rate = \\frac{TP}{TP+FN}$
+<img src="https://render.githubusercontent.com/render/math?math=True Positive Rate = \\frac{TP}{TP+FN}">
 
 By looking at the true positive rate we can see it is identical to recall.
 
-$False Positive Rate = \\frac{FP}{FP+TN}$
+<img src="https://render.githubusercontent.com/render/math?math=False Positive Rate = \\frac{FP}{FP+TN}">
 
 Given a curve, we can calculate the AUC (area under the curve) which can help determine the performance measure of each model. A larger AUC accounts for a better model.
 
