@@ -151,6 +151,13 @@ Theta represents our loss function, which helps measure how well the algorithm p
 
 The primary goal is to minimize the loss function, this can be done with the increasing and decreasing of different weights.
 
+Advantages:
+- Less inclined to over-fitting low dimensional datasets
+- Can interpret model coefficients as indicators of feature importance
+
+Disadvantages:
+- Assumption of linearity between the dependent variable and the independent variables
+
 ## Deep Learning
 
 ### Scaling
@@ -239,7 +246,7 @@ Let's take a look at the current results of our undersampled training data, with
 | :-------- | -------------: | -----------------: | ------------------: | ------------: |
 | Recall    |          92.1% |              63.7% |               92.1% |         85.9% |
 | Precision |            93% |              62.5% |               95.9% |          100% |
-| F1 score  |          92.6% |              63.1% |                 94% |            x% |
+| F1 score  |          92.6% |              63.1% |                 94% |            92.4% |
 
 As can be seen from the table above, the deep learning algorithm performs the best with a recall rate of 100%. However, we can not rely on this result too heavily because it may be the result of overfitting. Let's first see if we can improve any of the other models by cleaning the data of the previously mentioned features. 
 
@@ -247,7 +254,7 @@ As can be seen from the table above, the deep learning algorithm performs the be
 | :-------------------------- | -------------: | -----------------: | ------------------: | ------------: |
 | Recall                      |          91.1% |              63.7% |                 95% |         98.2% |
 | Precision                   |            93% |              62.5% |                 97% |         97.7% |
-| F1 score                    |            92% |              63.1% |                 96% |            x% |
+| F1 score                    |            92% |              63.1% |                 96% |            97.9% |
 
 We can see that cleaning the data only improved the metrics of the logistic regression model. Other classification models showed a decrease in performance. This could be due to fewer features available for training or the fact that the chosen features were less correlated than assumed and were critical in the improvement of the model.
 
@@ -259,15 +266,15 @@ After multiple tests with different samples from our undersampling method, it ca
 
 Decision Tree
 
-![](roc_tree.png)
+![](ROC_Tree.png)
 
 K-nearest Neighbor
 
-![](roc_knn.png)
+![](ROC_KNN.png)
 
 Logistic Regression
 
-![](roc_logistic regression.png)
+![](ROC_LogisticRegression.png)
 
 As we can see the K-nearest neighbor has the smallest area under the curve making it the least reliable model for predictions. We can adjust our threshold to slightly improve our performance measures. A higher threshold will result in higher precision while a lower threshold results in a higher recall. When setting the threshold to 0.2 we can observe the F1 score increasing by 5%, however, this is still not a match to the other models.
 
@@ -295,8 +302,9 @@ Currently all the figures are commented out to avoid increased runtime, in order
 
 [Karakaya, M. (2021, July 26). How to solve Binary Classification Problems in Deep Learning with Tensorflow & Keras?](https://medium.com/deep-learning-with-keras/which-activation-loss-functions-part-a-e16f5ad6d82a)
 
-[Radečić, D. (2021, October 14).
-How to Train a Classification Model with TensorFlow in 10 Minutes.](https://towardsdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes-fd2b7cfba86#ccbc)
+[Radečić, D. (2021, October 14). How to Train a Classification Model with TensorFlow in 10 Minutes.](https://towardsdatascience.com/how-to-train-a-classification-model-with-tensorflow-in-10-minutes-fd2b7cfba86#ccbc)
+
+[Rout, A. (2020, September 2). Advantages and Disadvantages of Logistic Regression](https://www.geeksforgeeks.org/advantages-and-disadvantages-of-logistic-regression/)
 
 [Vidhya, S. (2021, December 15). How To Plot Confusion Matrix In Python And Why You Need To?](https://www.stackvidhya.com/plot-confusion-matrix-in-python-and-why/)
 

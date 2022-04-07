@@ -261,7 +261,7 @@ def displayAllEvalMetrics(x_train, x_test, y_train, y_test):
     results.evalMetrics()
 
     y_pred, y_scores = logisticRegression(x_train, x_test, y_train)
-    results = DisplayResults(y_test, y_pred, "Logistic Regression")
+    results = DisplayResults(y_test, y_pred, "LogisticRegression")
     results.evalMetrics()
 
     deepLearning(x_train, x_test, y_train)
@@ -301,7 +301,7 @@ def askUserforMethod(x_train, x_test, y_train, y_test):
     elif choice == '3':
         print("...")
         y_pred, y_scores = logisticRegression(x_train, x_test, y_train)
-        method = "Logistic Regression"
+        method = "LogisticRegression"
 
         results = DisplayResults(y_test, y_pred, method)
         results.evalMetrics()
