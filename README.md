@@ -167,9 +167,7 @@ The activation function determines the threshold at which a neuron should be act
 
 The loss function helps the neural network determine how to update the weights given the difference between the expected output and the predicted output. Given that we are using the network for classification then we will use a cross-entropy based loss function more specifically **binary cross-entropy** because we only have two classes, whereas if we had more we would refer to categorical cross-entropy. The loss is calculated according to the following formula, where y represents the expected outcome, and y hat represents the outcome produced by our model
 
-<div align="center"><img src="https://latex.codecogs.com/svg.image?$L&space;=&space;-(y_i&space;\times&space;log(\hat{y}\_i)&space;&plus;&space;(1-y_i)\times(log(1-\hat{y}\_i)))$"></div>
-
-$L = -(y_i \times log(\hat{y}\_i) + (1-y_i)\times(log(1-\hat{y}\_i)))$
+<div align="center"><img src="https://latex.codecogs.com/svg.image?L&space;=&space;-(y_i&space;\times&space;log(\hat{y}_i)&space;&plus;&space;(1-y_i)\times(log(1-\hat{y}_i)))"></div>
 
 For example, the neural network is fed a fraudulent (labeled 1) case and a non-fraudulent case (labeled 0). The network is 80% confident that the first case is fraudulent meaning $y = 1$ and $\\hat{y} = 0.8$. After plugging these values into our equation we get $L = 0.32$. Now the neural network adjusts the weights accordingly by calculating the average over the loss overall to attain the cost:
 
